@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "ingredient": {
+    "tag": "forge:dusts/rose_gold"
+  },
+  "result": "emendatusenigmatica:rose_gold_ingot"
+}

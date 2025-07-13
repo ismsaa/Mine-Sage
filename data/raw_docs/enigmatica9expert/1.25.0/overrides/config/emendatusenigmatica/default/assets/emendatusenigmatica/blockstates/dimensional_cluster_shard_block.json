@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "emendatusenigmatica:block/dimensional_cluster_shard_block"
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "parent": "minecraft:block/block",
+  "children": {
+    "solid": {
+      "parent": "minecraft:block/block",
+      "elements": [
+        {
+          "faces": {
+            "down": {
+              "cullface": "down",
+              "texture": "#strata"
+            },
+            "east": {
+              "cullface": "east",
+              "texture": "#strata"
+            },
+            "north": {
+              "cullface": "north",
+              "texture": "#strata"
+            },
+            "south": {
+              "cullface": "south",
+              "texture": "#strata"
+            },
+            "up": {
+              "cullface": "up",
+              "texture": "#strata"
+            },
+            "west": {
+              "cullface": "west",
+              "texture": "#strata"
+            }
+          },
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            16,
+            16,
+            16
+          ]
+        }
+      ],
+      "render_type": "minecraft:solid",
+      "textures": {
+        "strata": "byg:block/blue_netherrack"
+      }
+    },
+    "translucent": {
+      "parent": "minecraft:block/block",
+      "elements": [
+        {
+          "faces": {
+            "down": {
+              "cullface": "down",
+              "emissivity": 15,
+              "texture": "#overlay"
+            },
+            "east": {
+              "cullface": "east",
+              "emissivity": 15,
+              "texture": "#overlay"
+            },
+            "north": {
+              "cullface": "north",
+              "emissivity": 15,
+              "texture": "#overlay"
+            },
+            "south": {
+              "cullface": "south",
+              "emissivity": 15,
+              "texture": "#overlay"
+            },
+            "up": {
+              "cullface": "up",
+              "emissivity": 15,
+              "texture": "#overlay"
+            },
+            "west": {
+              "cullface": "west",
+              "emissivity": 15,
+              "texture": "#overlay"
+            }
+          },
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            16,
+            16,
+            16
+          ]
+        }
+      ],
+      "render_type": "minecraft:translucent",
+      "textures": {
+        "overlay": "emendatusenigmatica:blocks/overlays/redstone"
+      }
+    }
+  },
+  "item_render_order": [
+    "solid",
+    "translucent"
+  ],
+  "loader": "forge:composite",
+  "textures": {
+    "particle": "byg:block/blue_netherrack"
+  }
+}

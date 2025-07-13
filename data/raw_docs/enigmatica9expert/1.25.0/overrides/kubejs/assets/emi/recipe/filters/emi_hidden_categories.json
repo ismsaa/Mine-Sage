@@ -1,0 +1,13 @@
+{
+	"filters": [
+		{
+			"category": "twilightforest:uncrafting"
+		},
+		{
+			"category": "emi_loot:chest_loot"
+		},
+		{
+			"category": "emi_loot:block_drops"
+		}
+	]
+}

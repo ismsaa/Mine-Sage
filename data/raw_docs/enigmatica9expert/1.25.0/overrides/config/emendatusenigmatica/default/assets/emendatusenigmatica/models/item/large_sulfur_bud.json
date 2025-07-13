@@ -1,0 +1,6 @@
+{
+  "parent": "emendatusenigmatica:item/bud",
+  "textures": {
+    "layer0": "emendatusenigmatica:blocks/large_sulfur_bud"
+  }
+}

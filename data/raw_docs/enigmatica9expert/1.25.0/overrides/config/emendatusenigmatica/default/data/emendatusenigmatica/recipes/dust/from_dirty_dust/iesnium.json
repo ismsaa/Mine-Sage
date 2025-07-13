@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "ingredient": {
+      "tag": "mekanism:dirty_dusts/iesnium"
+    }
+  },
+  "output": {
+    "item": "emendatusenigmatica:iesnium_dust"
+  }
+}

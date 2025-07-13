@@ -1,0 +1,19 @@
+{
+  "type": "ars_nouveau:crush",
+  "group": "emendatusenigmatica:compat_recipe",
+  "input": {
+    "item": "emendatusenigmatica:nickel_crimsite_ore"
+  },
+  "output": [
+    {
+      "chance": 1.0,
+      "count": 2,
+      "item": "emendatusenigmatica:nickel_dust"
+    },
+    {
+      "chance": 1.0,
+      "count": 1,
+      "item": "create:crimsite"
+    }
+  ]
+}

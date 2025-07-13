@@ -1,0 +1,66 @@
+services:
+  pinecone:
+    image: ghcr.io/pinecone-io/pinecone-local:latest
+    environment:
+      - PORT=5081
+      - PINECONE_HOST=localhost
+    ports:
+      - "5081:5081"        # gRPC/data‐plane port
+      - "5080-5090:5080-5090"  # control + index ports
+    platform: linux/amd64
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:5080/health || exit 1" ]
+      interval: 5s
+      timeout: 2s
+      retries: 5
+
+  rag-worker:
+    build:
+      context: .
+      dockerfile: rag-worker/Dockerfile
+    container_name: rag-worker
+    ports:
+      - "8000:8000"
+    command: >
+      /bin/bash -c "
+        python ingest/bootstrap_pinecone.py && \
+        exec uvicorn server:app --host 0.0.0.0 --port 8000
+      "
+    environment:
+      - PINECONE_HOST=http://pinecone:5081
+      - PINECONE_API_KEY=pclocal
+      - PINECONE_ENVIRONMENT=local
+    depends_on:
+      pinecone:
+        condition: service_started
+    volumes:
+      - .:/app
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest                # default entry-point = /bin/ollama serve
+    container_name: ollama
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+    # optional GPU access
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - capabilities: ["gpu"]
+
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:latest
+    container_name: openwebui
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    depends_on: [ollama]
+    ports:
+      - "3000:8080"
+    restart: unless-stopped
+
+volumes:
+  ollama:

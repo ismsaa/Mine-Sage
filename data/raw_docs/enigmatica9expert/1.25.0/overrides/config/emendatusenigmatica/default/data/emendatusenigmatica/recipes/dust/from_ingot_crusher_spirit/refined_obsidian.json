@@ -1,0 +1,12 @@
+{
+  "type": "occultism:crushing",
+  "crushing_time": 200,
+  "group": "emendatusenigmatica:compat_recipe",
+  "ignore_crushing_multiplier": true,
+  "ingredient": {
+    "tag": "forge:ingots/refined_obsidian"
+  },
+  "result": {
+    "item": "emendatusenigmatica:refined_obsidian_dust"
+  }
+}

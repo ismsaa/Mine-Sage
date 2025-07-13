@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:crushing",
+  "input": {
+    "ingredient": {
+      "tag": "mekanism:clumps/iesnium"
+    }
+  },
+  "output": {
+    "item": "emendatusenigmatica:iesnium_dirty_dust"
+  }
+}

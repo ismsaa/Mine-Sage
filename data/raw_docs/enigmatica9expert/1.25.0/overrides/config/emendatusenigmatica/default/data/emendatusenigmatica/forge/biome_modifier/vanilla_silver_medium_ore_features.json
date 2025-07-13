@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "emendatusenigmatica:vanilla_silver_medium",
+  "step": "underground_ores"
+}

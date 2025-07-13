@@ -1,0 +1,28 @@
+{
+  "values": [
+    "#forge:nuggets/netherite",
+    "#forge:nuggets/tin",
+    "#forge:nuggets/invar",
+    "#forge:nuggets/zinc",
+    "#forge:nuggets/rose_gold",
+    "#forge:nuggets/hop_graphite",
+    "#forge:nuggets/iesnium",
+    "#forge:nuggets/brass",
+    "#forge:nuggets/bronze",
+    "#forge:nuggets/silver",
+    "#forge:nuggets/uranium",
+    "#forge:nuggets/refined_obsidian",
+    "#forge:nuggets/steel",
+    "#forge:nuggets/aluminum",
+    "#forge:nuggets/lumium",
+    "#forge:nuggets/signalum",
+    "#forge:nuggets/enderium",
+    "#forge:nuggets/refined_glowstone",
+    "#forge:nuggets/copper",
+    "#forge:nuggets/nickel",
+    "#forge:nuggets/electrum",
+    "#forge:nuggets/osmium",
+    "#forge:nuggets/constantan",
+    "#forge:nuggets/lead"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "thermal:press",
+  "energy": 400,
+  "group": "emendatusenigmatica:compat_recipe",
+  "ingredients": [
+    {
+      "item": "emendatusenigmatica:refined_obsidian_block"
+    },
+    {
+      "item": "thermal:press_unpacking_die"
+    }
+  ],
+  "results": {
+    "count": 9,
+    "item": "emendatusenigmatica:refined_obsidian_ingot"
+  }
+}

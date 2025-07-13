@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "ingredient": {
+      "tag": "forge:ingots/water_essence"
+    }
+  },
+  "output": {
+    "item": "emendatusenigmatica:enriched_water_essence"
+  }
+}

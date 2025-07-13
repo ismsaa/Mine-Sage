@@ -1,0 +1,4 @@
+grpcio          # last gRPC that still accepts protobuf 3
+grpcio-status
+grpcio-health-checking
+googleapis-common-protos==1.60.*

@@ -1,0 +1,11 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "ingredient": {
+      "tag": "forge:ingots/earth_essence"
+    }
+  },
+  "output": {
+    "item": "emendatusenigmatica:enriched_earth_essence"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "emendatusenigmatica",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/rose_gold"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "emendatusenigmatica:rose_gold_nugget"
+  }
+}

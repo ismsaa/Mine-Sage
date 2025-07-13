@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:dripstone_caves",
+  "features": "emendatusenigmatica:emerald_geode_caves",
+  "step": "underground_ores"
+}

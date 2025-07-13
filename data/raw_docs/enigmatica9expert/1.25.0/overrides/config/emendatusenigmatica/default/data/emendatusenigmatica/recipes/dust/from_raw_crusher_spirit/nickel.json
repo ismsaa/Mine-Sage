@@ -1,0 +1,12 @@
+{
+  "type": "occultism:crushing",
+  "crushing_time": 200,
+  "group": "emendatusenigmatica:compat_recipe",
+  "ingredient": {
+    "tag": "forge:raw_materials/nickel"
+  },
+  "result": {
+    "count": 2,
+    "item": "emendatusenigmatica:nickel_dust"
+  }
+}

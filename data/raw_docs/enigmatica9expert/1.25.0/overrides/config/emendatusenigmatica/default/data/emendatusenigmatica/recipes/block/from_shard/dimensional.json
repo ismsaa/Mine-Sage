@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "emendatusenigmatica",
+  "key": {
+    "S": {
+      "item": "emendatusenigmatica:dimensional_cluster_shard"
+    }
+  },
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "result": {
+    "item": "emendatusenigmatica:dimensional_cluster_shard_block"
+  }
+}

@@ -1,0 +1,31 @@
+{
+    "id": "iron",
+    "source": "vanilla",
+    "localizedName": "Iron",
+    "disableDefaultOre": true,
+    "processedTypes": [
+        "ore",
+        "crushed_ore",
+        "dust",
+        "plate",
+        "rod",
+        "gear",
+        "slurry",
+        "crystal",
+        "shard",
+        "clump",
+        "dirty_dust"
+    ],
+    "properties": {
+        "materialType": "metal",
+        "harvestLevel": 1
+    },
+    "oreDrop": {
+        "drop": "minecraft:raw_iron",
+        "min": 1,
+        "max": 1
+    },
+    "colors": {
+        "gasColor": "a8a8a8"
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "cross": "emendatusenigmatica:blocks/large_dimensional_bud",
+    "particle": "emendatusenigmatica:blocks/large_dimensional_bud"
+  }
+}

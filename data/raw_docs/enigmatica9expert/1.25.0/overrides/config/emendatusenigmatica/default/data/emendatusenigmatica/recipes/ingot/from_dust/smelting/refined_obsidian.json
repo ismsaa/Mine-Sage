@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.5,
+  "ingredient": {
+    "tag": "forge:dusts/refined_obsidian"
+  },
+  "result": "emendatusenigmatica:refined_obsidian_ingot"
+}

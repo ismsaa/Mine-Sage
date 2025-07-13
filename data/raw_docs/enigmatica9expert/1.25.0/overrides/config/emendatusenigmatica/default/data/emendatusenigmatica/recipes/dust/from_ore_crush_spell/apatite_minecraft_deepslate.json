@@ -1,0 +1,19 @@
+{
+  "type": "ars_nouveau:crush",
+  "group": "emendatusenigmatica:compat_recipe",
+  "input": {
+    "item": "emendatusenigmatica:apatite_deepslate_ore"
+  },
+  "output": [
+    {
+      "chance": 1.0,
+      "count": 2,
+      "item": "emendatusenigmatica:apatite_dust"
+    },
+    {
+      "chance": 1.0,
+      "count": 1,
+      "item": "minecraft:deepslate"
+    }
+  ]
+}

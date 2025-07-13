@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_bumblezone:hive_pillar",
+    "the_bumblezone:hive_wall",
+    "the_bumblezone:pollinated_pillar"
+  ],
+  "features": "emendatusenigmatica:dike_iron_bumblezone_deposit",
+  "step": "underground_ores"
+}

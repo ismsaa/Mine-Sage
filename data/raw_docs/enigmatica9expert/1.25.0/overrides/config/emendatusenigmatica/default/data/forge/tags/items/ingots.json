@@ -1,0 +1,30 @@
+{
+  "values": [
+    "#forge:ingots/tin",
+    "#forge:ingots/invar",
+    "#forge:ingots/andesite",
+    "#forge:ingots/zinc",
+    "#forge:ingots/rose_gold",
+    "#forge:ingots/hop_graphite",
+    "#forge:ingots/sky",
+    "#forge:ingots/iesnium",
+    "#forge:ingots/brass",
+    "#forge:ingots/bronze",
+    "#forge:ingots/silver",
+    "#forge:ingots/uranium",
+    "#forge:ingots/refined_obsidian",
+    "#forge:ingots/steel",
+    "#forge:ingots/tainted_gold",
+    "#forge:ingots/aluminum",
+    "#forge:ingots/lumium",
+    "#forge:ingots/signalum",
+    "#forge:ingots/enderium",
+    "#forge:ingots/refined_glowstone",
+    "#forge:ingots/nickel",
+    "#forge:ingots/electrum",
+    "#forge:ingots/osmium",
+    "#forge:ingots/constantan",
+    "#forge:ingots/lead",
+    "#forge:ingots/infused_iron"
+  ]
+}

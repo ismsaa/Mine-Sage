@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "byg:brimstone_caverns",
+  "features": "emendatusenigmatica:dike_sulfur_nether_brimstone_deposit",
+  "step": "underground_ores"
+}

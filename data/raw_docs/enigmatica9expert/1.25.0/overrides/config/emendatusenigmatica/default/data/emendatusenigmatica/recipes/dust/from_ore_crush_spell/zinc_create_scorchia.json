@@ -1,0 +1,19 @@
+{
+  "type": "ars_nouveau:crush",
+  "group": "emendatusenigmatica:compat_recipe",
+  "input": {
+    "item": "emendatusenigmatica:zinc_scorchia_ore"
+  },
+  "output": [
+    {
+      "chance": 1.0,
+      "count": 2,
+      "item": "emendatusenigmatica:zinc_dust"
+    },
+    {
+      "chance": 1.0,
+      "count": 1,
+      "item": "create:scorchia"
+    }
+  ]
+}

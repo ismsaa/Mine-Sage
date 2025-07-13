@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "emendatusenigmatica:vanilla_lead_nether",
+  "step": "underground_ores"
+}

@@ -1,0 +1,23 @@
+{
+  "values": [
+    "#forge:ores/tin",
+    "#forge:ores/lapis",
+    "#forge:ores/zinc",
+    "#forge:ores/bitumen",
+    "#forge:ores/coal",
+    "#forge:ores/silver",
+    "#forge:ores/uranium",
+    "#forge:ores/redstone",
+    "#forge:ores/emerald",
+    "#forge:ores/aluminum",
+    "#forge:ores/gold",
+    "#forge:ores/apatite",
+    "#forge:ores/copper",
+    "#forge:ores/nickel",
+    "#forge:ores/quartz",
+    "#forge:ores/osmium",
+    "#forge:ores/lead",
+    "#forge:ores/diamond",
+    "#forge:ores/iron"
+  ]
+}

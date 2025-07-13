@@ -1,0 +1,13 @@
+{
+    "id": "sulfur",
+    "source": "modded",
+    "localizedName": "Sulfur",
+    "processedTypes": ["storage_block", "gem", "dust", "cluster"],
+    "properties": {
+        "materialType": "gem",
+        "harvestLevel": 2,
+        "blockRecipeType": 9,
+        "isBurnable": true,
+        "burnTime": 1200
+    }
+}

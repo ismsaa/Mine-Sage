@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "emendatusenigmatica",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/refined_obsidian"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "emendatusenigmatica:refined_obsidian_nugget"
+  }
+}
