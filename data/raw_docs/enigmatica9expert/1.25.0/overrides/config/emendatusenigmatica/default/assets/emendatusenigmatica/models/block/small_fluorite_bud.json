@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "cross": "emendatusenigmatica:blocks/small_fluorite_bud",
-    "particle": "emendatusenigmatica:blocks/small_fluorite_bud"
-  }
-}

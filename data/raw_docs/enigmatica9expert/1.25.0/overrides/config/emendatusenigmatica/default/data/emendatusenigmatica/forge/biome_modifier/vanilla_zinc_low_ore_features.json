@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
-  "features": "emendatusenigmatica:vanilla_zinc_low",
-  "step": "underground_ores"
-}

@@ -2,17 +2,12 @@ services:
   pinecone:
     image: ghcr.io/pinecone-io/pinecone-local:latest
     environment:
-      - PORT=5081
-      - PINECONE_HOST=localhost
+      PORT: 5080              # default control-plane port :contentReference[oaicite:2]{index=2}
+      PINECONE_HOST: localhost
     ports:
-      - "5081:5081"        # gRPC/data‐plane port
-      - "5080-5090:5080-5090"  # control + index ports
+      - "5080-5081:5080-5081"  # control + index ports
     platform: linux/amd64
-    healthcheck:
-      test: [ "CMD-SHELL", "curl -f http://localhost:5080/health || exit 1" ]
-      interval: 5s
-      timeout: 2s
-      retries: 5
+
 
   rag-worker:
     build:

@@ -1,6 +1,0 @@
-{
-  "parent": "emendatusenigmatica:item/bud",
-  "textures": {
-    "layer0": "emendatusenigmatica:blocks/dimensional_cluster"
-  }
-}

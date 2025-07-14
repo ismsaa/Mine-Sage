@@ -1,6 +1,0 @@
-{
-  "parent": "emendatusenigmatica:item/bud",
-  "textures": {
-    "layer0": "emendatusenigmatica:blocks/large_fluorite_bud"
-  }
-}
