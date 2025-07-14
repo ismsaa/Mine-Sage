@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_nether",
-  "features": "emendatusenigmatica:dense_quartz_nether",
-  "step": "underground_ores"
-}
