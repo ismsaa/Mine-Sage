@@ -7,8 +7,8 @@ import os
 import zipfile
 from pathlib import Path
 
-import pinecone
-from pinecone import Pinecone as PineconeClient
+from pinecone.grpc import PineconeGRPC
+from pinecone import ServerlessSpec
 import requests
 from bs4 import BeautifulSoup  # HTML parsing for overrides
 from langchain_ollama import OllamaEmbeddings  # updated Ollama embeddings
@@ -24,28 +24,25 @@ OVRD_DIR    = RAW_DIR / "overrides"
 EMB_MODEL   = "nomic-embed-text"
 OLLAMA_URL  = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 PC_INDEX    = os.getenv("PINECONE_INDEX", "mods")
-PC_HOST     = os.getenv("PINECONE_HOST", "http://localhost:5081")
+PC_HOST     = os.getenv("PINECONE_HOST", "localhost:5081")
 
-pc = PineconeClient(
-    api_key="local-dev",         # dummy key for local
-    environment="local",         # must match local env
-    host=PC_HOST                 # e.g. http://localhost:5081
-)  # pinecone.init() is deprecated
+pc = PineconeGRPC(
+    api_key="dev",
+    host=PC_HOST
+)
 
 # ── Create index if missing ────────────────────────────────────
 if PC_INDEX not in pc.list_indexes().names():
     pc.create_index(
         name=PC_INDEX,
         dimension=768,
-        metric="cosine"
+        metric="cosine",
+        spec=ServerlessSpec(cloud="aws", region="us-east-1")
     )
 
-# ── Wrap existing index for LangChain ─────────────────────────
+# ── Setup embeddings and index ─────────────────────────────
 emb = OllamaEmbeddings(model="nomic-embed-text", base_url=OLLAMA_URL)
-vect = Pinecone.from_existing_index(
-    index_name=PC_INDEX,
-    embedding=emb
-)  # host/API key already configured in pc
+index = pc.Index(PC_INDEX)
 
 MODRINTH_API = "https://api.modrinth.com/v2"
 CF_SEARCH    = "https://addons-ecs.forgesvc.net/api/v2/mods/search"
@@ -62,7 +59,14 @@ def write_file(path: Path, content: str):
 
 def upsert_doc(path: Path, metadata: dict):
     text = path.read_text(encoding="utf-8")
-    vect.add_texts([text], metadatas=[metadata], ids=[str(path)])
+    # Generate embedding using Ollama
+    embedding = emb.embed_query(text)
+    # Upsert to Pinecone
+    index.upsert(vectors=[{
+        "id": str(path),
+        "values": embedding,
+        "metadata": metadata
+    }])
     print(f"[UPSERT] {path}")
 
 # ─── ZIP Pack Parsing ──────────────────────────────────────────
