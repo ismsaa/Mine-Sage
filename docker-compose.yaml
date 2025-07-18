@@ -2,11 +2,14 @@ services:
   pinecone:
     image: ghcr.io/pinecone-io/pinecone-local:latest
     environment:
-      PORT: 5080              # default control-plane port :contentReference[oaicite:2]{index=2}
+      PORT: 5080              # default control-plane port
       PINECONE_HOST: localhost
     ports:
       - "5080-5082:5080-5082"  # control + index ports
     platform: linux/amd64
+    volumes:
+      - pinecone_data:/data    # Persist Pinecone data (if supported)
+    restart: unless-stopped
 
 
   rag-worker:
@@ -55,7 +58,11 @@ services:
     depends_on: [ollama]
     ports:
       - "3000:8080"
+    volumes:
+      - openwebui_data:/app/backend/data  # Persist OpenWebUI data (chats, functions, etc.)
     restart: unless-stopped
 
 volumes:
   ollama:
+  pinecone_data:
+  openwebui_data:

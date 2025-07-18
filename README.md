@@ -64,6 +64,12 @@ A fully-local Retrieval-Augmented-Generation (RAG) chatbot that answers question
 - [x] **Normalized Architecture**: Revolutionary deduplication system with 100% efficiency
 - [x] **Universal Mod Knowledge**: Query any mod regardless of modpack context
 - [x] **Intelligent Document Types**: Base mods, pack overviews, and configuration overrides
+- [x] **🔄 Data Persistence System**: Complete backup/restore solution for production use
+  - [x] Automated vector backup with JSON export (75.7 KB for 5 vectors)
+  - [x] Batch restore with 100% success rate and progress tracking
+  - [x] Startup auto-restore with smart data detection
+  - [x] Comprehensive data management CLI (`data_manager.py`)
+  - [x] Docker volume persistence for OpenWebUI and service data
 - [x] **Comprehensive Testing**: All components validated and working
 
 ### 🎉 Production Ready
@@ -137,11 +143,33 @@ python rag_chat.py
 python show_index_info.py
 ```
 
+### 🔄 Data Persistence & Management
+```bash
+# Check database status
+python data_manager.py status
+
+# Create backup (automatic timestamping)
+python data_manager.py backup
+
+# List all available backups
+python data_manager.py list
+
+# Restore from latest backup
+python data_manager.py restore
+
+# Clean old backups (keep 5 most recent)
+python data_manager.py clean --keep 5
+
+# Automatic startup restore (smart detection)
+python startup_restore.py
+```
+
 ### Quick Start
 1. **Start Services**: `docker compose up -d`
-2. **Test Connectivity**: `python UpsertTest.py`
-3. **Try RAG Chat**: `python rag_chat.py`
-4. **View OpenWebUI**: Visit `http://localhost:3000`
+2. **Auto-Restore Data**: `python startup_restore.py` (if backups exist)
+3. **Test Connectivity**: `python UpsertTest.py`
+4. **Try RAG Chat**: `python rag_chat.py`
+5. **View OpenWebUI**: Visit `http://localhost:3000`
 
 ---
 

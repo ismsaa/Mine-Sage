@@ -167,50 +167,62 @@ def chat_endpoint(query: ChatQuery):
 
 # OpenWebUI Tool Integration
 @app.post("/tools/modpack_search")
-def modpack_search_tool(query: dict):
+def modpack_search_tool(request: dict):
     """OpenWebUI tool for modpack search"""
     try:
-        user_query = query.get("query", "")
+        user_query = request.get("query", "")
+        top_k = request.get("top_k", 5)
+        
         if not user_query:
             return {"error": "No query provided"}
         
         # Perform search
-        results = semantic_search(user_query, top_k=3, score_threshold=0.3)
+        results = semantic_search(user_query, top_k=top_k, score_threshold=0.3)
         
-        # Format for OpenWebUI
-        formatted_results = []
-        for result in results:
-            formatted_results.append({
-                "title": result.content,
-                "score": result.score,
-                "type": result.metadata.get('type', 'unknown')
-            })
-        
-        return {
-            "results": formatted_results,
-            "query": user_query,
-            "total": len(formatted_results)
-        }
+        # Format for OpenWebUI - return as formatted text
+        if results:
+            output = f"🔍 Found {len(results)} results for '{user_query}':\n\n"
+            for i, result in enumerate(results, 1):
+                metadata = result.metadata
+                title = metadata.get('mod_title', metadata.get('pack_name', 'Unknown'))
+                doc_type = metadata.get('type', 'unknown')
+                output += f"{i}. **{title}** ({doc_type})\n"
+                output += f"   Score: {result.score:.3f} | {result.content[:100]}...\n\n"
+            return {"result": output}
+        else:
+            return {"result": f"No results found for '{user_query}'"}
+            
     except Exception as e:
         return {"error": str(e)}
 
 @app.post("/tools/modpack_chat")
-def modpack_chat_tool(query: dict):
+def modpack_chat_tool(request: dict):
     """OpenWebUI tool for modpack chat"""
     try:
-        user_message = query.get("message", "")
-        if not user_message:
-            return {"error": "No message provided"}
+        user_question = request.get("question", "")
+        context_size = request.get("context_size", 5)
+        
+        if not user_question:
+            return {"error": "No question provided"}
         
         # Get RAG response
-        search_results = semantic_search(user_message, top_k=5, score_threshold=0.3)
-        response = create_rag_response(user_message, search_results)
+        search_results = semantic_search(user_question, top_k=context_size, score_threshold=0.3)
+        response = create_rag_response(user_question, search_results)
         
-        return {
-            "response": response,
-            "sources_count": len(search_results),
-            "query": user_message
-        }
+        # Format response with sources
+        output = f"**Question:** {user_question}\n\n"
+        output += f"**Answer:** {response}\n\n"
+        
+        if search_results:
+            output += f"**Sources ({len(search_results)}):**\n"
+            for result in search_results:
+                metadata = result.metadata
+                title = metadata.get('mod_title', metadata.get('pack_name', 'Unknown'))
+                doc_type = metadata.get('type', 'unknown')
+                output += f"- {title} ({doc_type}, score: {result.score:.3f})\n"
+        
+        return {"result": output}
+        
     except Exception as e:
         return {"error": str(e)}
 
